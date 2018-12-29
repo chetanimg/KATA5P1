@@ -1,7 +1,5 @@
 package kata_p1;
-
 import java.sql.Connection;
-import java.sql.DatabaseMetaData;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -25,17 +23,16 @@ public class SelectApp {
         try (Connection conn = this.connect();
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(sql)){
-        // Bucle sobre el conjunto de registros.
-            while (rs.next()) {
-                System.out.println(rs.getInt("Id") + "\t" +
-                                rs.getString("Name") + "\t" +
-                                rs.getString("Surname") + "\t" +
-                                rs.getString("Departament") + "\t");    
-            }
-            rs.close();
-            stmt.close();
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
+                while (rs.next()) {
+                    System.out.println(rs.getInt("Id") + "\t" +
+                    rs.getString("Name") + "\t" +
+                    rs.getString("Surname") + "\t" +
+                    rs.getString("Departament") + "\t");    
+                }
+                 rs.close();
+                stmt.close();
+            } catch (SQLException e) {
+                System.out.println(e.getMessage());
         }
     }
     

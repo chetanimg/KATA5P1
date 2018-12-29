@@ -1,7 +1,5 @@
 package kata_p1;
 
-
-
 public class Kata5 {
      public static void main(String[] args) {
         SelectApp app = new SelectApp();
@@ -9,9 +7,7 @@ public class Kata5 {
         CreateBD.createNewDatabase("mail.db");
         CreateTable.createNewTable();
         InsertDataInTable idt = new InsertDataInTable();
-        idt.insert("abc@ulpgc.es");
-        idt.insert("xyz@ull.es");
-        idt.insert("def123@gmail.com");
+        idt.refill();
         SelectAppMail app2 = new SelectAppMail();
         app2.selectAll();
     }

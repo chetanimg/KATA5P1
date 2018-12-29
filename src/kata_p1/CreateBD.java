@@ -1,6 +1,4 @@
-
 package kata_p1;
-
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
 import java.sql.DriverManager;
